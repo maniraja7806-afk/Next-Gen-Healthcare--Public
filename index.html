@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cerulean Health</title>
+    <script>
+      // Suppress ResizeObserver loop errors which are native and manifest as "Script error." in cross-origin frames
+      const _ResizeObserver = window.ResizeObserver;
+      window.ResizeObserver = class ResizeObserver extends _ResizeObserver {
+        constructor(callback) {
+          super((entries, observer) => {
+            window.requestAnimationFrame(() => {
+              callback(entries, observer);
+            });
+          });
+        }
+      };
+      
+      window.addEventListener('error', function(e) {
+        if (e.message === 'Script error.' || (e.message && e.message.includes('ResizeObserver'))) {
+          e.stopImmediatePropagation();
+        }
+      }, true);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

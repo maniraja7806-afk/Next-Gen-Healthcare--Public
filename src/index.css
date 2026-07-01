@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer components {
+  .form-input {
+    @apply block w-full px-4 py-3 bg-white dark:bg-[#161B22] border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-[#0F6CBD] dark:focus:border-[#4FC3F7] focus:ring-2 focus:ring-[#0F6CBD]/20 dark:focus:ring-[#4FC3F7]/20 transition-all sm:text-sm;
+  }
+}
+
+@media print {
+  /* Hide non-essential dashboard elements */
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Reset layout constraints and background colors */
+  body, main {
+    background-color: white !important;
+    color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Ensure main content is visible and takes up full space */
+  .flex-1 {
+    flex: none !important;
+    width: 100% !important;
+  }
+  
+  .overflow-hidden, .overflow-y-auto, .overflow-auto {
+    overflow: visible !important;
+  }
+
+  /* Hide interactive UI elements (buttons, inputs) in the print view if they don't have text values */
+  button:not(.print-keep),
+  input[type="submit"],
+  .shadow-sm,
+  .shadow-md,
+  .shadow-lg,
+  .shadow-xl {
+    box-shadow: none !important;
+  }
+  
+  /* Make text stark black for better contrast on printers */
+  * {
+    color: black !important;
+    border-color: #ddd !important;
+  }
+  
+  /* Page break rules for records */
+  .page-break-before {
+    page-break-before: always;
+  }
+  
+  .page-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Cerulean Health",
+  "description": "Next-Generation Intelligent Healthcare Management Platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
