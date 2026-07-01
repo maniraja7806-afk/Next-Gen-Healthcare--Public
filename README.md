@@ -38,14 +38,72 @@ You can use the following credentials to explore the different portals of the ap
 | **Insurance** | `insurance@hospital.org` | `password123` |
 | **Patient** | `patient.meenakshi@email.com` | `password123` |
 
-## Getting Started
+## 🚀 Installation & Setup
 
-To run this project locally:
+Follow these steps to get the project up and running on your local machine.
 
-1. Clone the repository
-2. Install dependencies using `npm install`
-3. Start the development server using `npm run dev`
-4. Build for production using `npm run build`
+### Prerequisites
+
+Ensure you have the following installed on your system:
+- [Node.js](https://nodejs.org/en/) (v16.0.0 or higher recommended)
+- npm (usually comes with Node.js) or [Yarn](https://yarnpkg.com/)
+- [Git](https://git-scm.com/)
+
+### Step 1: Clone the Repository
+
+Open your terminal and clone the repository using Git:
+```bash
+git clone https://github.com/your-username/cerulean-health.git
+cd cerulean-health
+```
+
+### Step 2: Install Dependencies
+
+Install the required project dependencies. We use `npm` by default:
+```bash
+npm install
+```
+*(Alternatively, you can use `yarn install` or `pnpm install` if you prefer).*
+
+### Step 3: Running the Development Server
+
+Start the Vite development server to view the app in your browser:
+```bash
+npm run dev
+```
+The application will typically be available at `http://localhost:5173` (or the port specified in your terminal). The development server includes hot-module replacement (HMR) for instant feedback while coding.
+
+### Step 4: Building for Production
+
+To create a production-ready build:
+```bash
+npm run build
+```
+This will compile the TypeScript code and bundle the assets into the `dist/` directory.
+
+To preview the production build locally:
+```bash
+npm run preview
+```
+
+## 📁 Project Structure
+
+Here is a brief overview of the project's folder structure:
+```text
+cerulean-health/
+├── public/                 # Static assets (images, icons, etc.)
+├── src/                    # Source code
+│   ├── components/         # Reusable UI components
+│   ├── layouts/            # Page layouts (e.g., AppLayout with Sidebar)
+│   ├── pages/              # Application pages and role-based dashboards
+│   ├── utils/              # Helper functions (e.g., PDF generation)
+│   ├── App.tsx             # Main application component & routing
+│   └── index.css           # Global Tailwind CSS styles
+├── package.json            # Project metadata and scripts
+├── tailwind.config.js      # Tailwind CSS configuration
+├── tsconfig.json           # TypeScript configuration
+└── vite.config.ts          # Vite configuration
+```
 
 ## Key Functionalities
 
